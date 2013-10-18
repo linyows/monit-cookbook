@@ -94,4 +94,7 @@ MIT
 Authors
 -------
 
-[@linyows](https://github.com/linyows)
+- [@linyows][linyows]
+
+[travis]: http://travis-ci.org/linyows/monit-cookbook
+[linyows]: https://github.com/linyows
