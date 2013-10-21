@@ -1,7 +1,7 @@
 # Cookbook Name:: monit
 # Resource:: service
 
-actions :create, :delete
+actions :create, :delete, :delete_unmonitored
 default_action :create
 
 def initialize(*args)
