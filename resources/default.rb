@@ -64,7 +64,7 @@ attribute :notification_from,
   :default => 'monit@$HOST'
 attribute :notification_subject,
   :kind_of => String,
-  :default => '[$HOST: monit alert] $EVENT $SERVICE'
+  :default => '[Monit Alert] $HOST: $EVENT $SERVICE'
 attribute :notification_message,
   :kind_of => String,
   :default => <<-MSG.gsub(/^ {4}/, '').strip
