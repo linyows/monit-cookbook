@@ -3,11 +3,7 @@
 
 default['monit']['poll_interval']        = 120
 default['monit']['poll_start_delay']     = 300
-default['monit']['logfile']              = '/var/log/monit.log'
-default['monit']['idfile']               = '/var/lib/monit/id'
-default['monit']['statefile']            = '/var/lib/monit/state'
 default['monit']['smtp_servers']         = 'localhost'
-default['monit']['eventqueue_basedir']   = '/var/lib/monit/events'
 default['monit']['eventqueue_slots']     = 100
 default['monit']['httpd']                = false
 default['monit']['httpd_host']           = 'localhost'
@@ -32,3 +28,16 @@ default['monit']['notification_message'] = <<-MSG.gsub(/^ {2}/, '').strip
   Your faithful employee,
   Monit
 MSG
+
+case node['platform_family']
+when 'rhel', 'fedora', 'suse'
+  default['monit']['logfile']              = 'syslog facility log_daemon'
+  default['monit']['idfile']               = '/var/.monit.id'
+  default['monit']['statefile']            = '/var/.monit.state'
+  default['monit']['eventqueue_basedir']   = '/var/monit'
+else
+  default['monit']['logfile']              = '/var/log/monit.log'
+  default['monit']['idfile']               = '/var/lib/monit/id'
+  default['monit']['statefile']            = '/var/lib/monit/state'
+  default['monit']['eventqueue_basedir']   = '/var/lib/monit/events'
+end

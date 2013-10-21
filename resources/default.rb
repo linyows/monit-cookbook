@@ -23,19 +23,19 @@ attribute :poll_start_delay,
   :default => 300
 attribute :logfile,
   :kind_of => String,
-  :default => '/var/log/monit.log'
+  :required => true
 attribute :idfile,
   :kind_of => String,
-  :default => '/var/lib/monit/id'
+  :required => true
 attribute :statefile,
   :kind_of => String,
-  :default => '/var/lib/monit/state'
+  :required => true
 attribute :smtp_servers,
   :kind_of => [String, Array],
   :default => 'localhost'
 attribute :eventqueue_basedir,
   :kind_of => String,
-  :default => '/var/lib/monit/events'
+  :required => true
 attribute :eventqueue_slots,
   :kind_of => Integer,
   :default => 100
