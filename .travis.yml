@@ -5,7 +5,7 @@ rvm:
   - 2.0.0
 
 script:
-  - bundle exec rake chef:spec
+  - bundle exec foodcritic -t style,attributes -C .
 
 notifications:
   email:
