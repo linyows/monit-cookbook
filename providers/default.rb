@@ -20,13 +20,12 @@ action :enable do
       end
 
       # Working init script, fix for: https://bugs.launchpad.net/ubuntu/+source/monit/+bug/993381
-      if node['platform_version'].to_i == 12
-        cookbook_file '/etc/init.d/monit' do
-          source 'init-monit-ubuntu12.sh'
-          owner 'root'
-          group 'root'
-          mode 0755
-        end
+      cookbook_file '/etc/init.d/monit' do
+        source 'init-monit-ubuntu12.sh'
+        owner 'root'
+        group 'root'
+        mode 0755
+        only_if { node['platform_version'].to_i == 12 }
       end
     end
 
