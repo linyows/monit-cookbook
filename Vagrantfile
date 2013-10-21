@@ -45,6 +45,7 @@ Vagrant.configure('2') do |config|
       chef.cookbooks_path = cookbooks_path
       chef.add_recipe 'postfix'
       chef.add_recipe 'memcached'
+      chef.add_recipe 'yum::epel'
       chef.add_recipe 'monit'
       chef.json = chef_json
     end

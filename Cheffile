@@ -3,5 +3,6 @@
 
 site 'http://community.opscode.com/api/v1'
 
+cookbook 'yum', git: 'git://github.com/opscode-cookbooks/yum'
 cookbook 'memcached', git: 'git://github.com/opscode-cookbooks/memcached'
-cookbook 'postfix', git: 'git://github.com/opscode-cookbooks/postfix.git'
+cookbook 'postfix', git: 'git://github.com/opscode-cookbooks/postfix'
