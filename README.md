@@ -75,7 +75,7 @@ httpd                | enable web interface  | false
 httpd_host           | web interface address | localhost
 httpd_port           | web interface port    | 2812
 httpd_allows         | allow access          | ['localhost', '192.168.0.1/24', 'admin:monit', 'user:pass read-only']
-notification_emails  | email addresses       | admin@example.com not on { action }
+notification_emails  | email addresses       | admin@example.com but not on { action }
 notification_from    | email from            | monit@$HOST
 notification_subject | email submit          | [$HOST: monit alert] $EVENT $SERVICE
 notification_message | email message         | $EVENT Service $SERVICE...

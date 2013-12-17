@@ -14,7 +14,7 @@ default['monit']['httpd_allows']         = [
   'admin:monit',
   'user:pass read-only'
 ]
-default['monit']['notification_emails']  = 'admin@example.com not on { action }'
+default['monit']['notification_emails']  = 'admin@example.com but not on { action }'
 default['monit']['notification_from']    = 'monit@$HOST'
 default['monit']['notification_subject'] = '[Monit Alert] $HOST: $EVENT $SERVICE'
 default['monit']['notification_message'] = <<-MSG.gsub(/^ {2}/, '').strip
