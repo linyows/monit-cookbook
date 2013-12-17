@@ -8,6 +8,14 @@ check <%= @check_type.to_s %> <%= @name %>
 <% end -%>
 <% if @start_program %>
 start program = "<%= @start_program %>"
+<% if @program_uid %>
+  as uid <%= @program_uid %>
+  <% if @program_gid %>
+  and gid <%= @program_gid %>
+  <% end -%>
+<% elsif @program_gid %>
+  as gid <%= @program_gid %>
+<% end -%>
   <% if @start_with %>
   with <%= @start_with %>
   <% end -%>
