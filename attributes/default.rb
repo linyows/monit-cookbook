@@ -32,8 +32,8 @@ MSG
 case node['platform_family']
 when 'rhel', 'fedora', 'suse'
   default['monit']['logfile']              = 'syslog facility log_daemon'
-  default['monit']['idfile']               = '/var/.monit.id'
-  default['monit']['statefile']            = '/var/.monit.state'
+  default['monit']['idfile']               = '/var/monit.id'
+  default['monit']['statefile']            = '/var/monit.state'
   default['monit']['eventqueue_basedir']   = '/var/monit'
 else
   default['monit']['logfile']              = '/var/log/monit.log'
