@@ -42,6 +42,14 @@ action :enable do
       recursive true
     end
 
+    directory new_resource.eventqueue_basedir do
+      owner 'root'
+      group 'root'
+      mode 0755
+      action :create
+      recursive true
+    end
+
     template conf_path do
       path conf_path
       cookbook 'monit'
