@@ -42,4 +42,4 @@ else
   default['monit']['eventqueue_basedir']   = '/var/lib/monit/events'
 end
 
-default['monit']['services']               = []
+default['monit']['services']               = {}

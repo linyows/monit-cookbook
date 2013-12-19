@@ -22,4 +22,4 @@ end
 monit_service 'delete unmonitored service confs' do
   action :delete_unmonitored
   except node['monit']['services'].keys.map { |service| "#{service}.conf" }
-end if node['monit']['services']
+end unless node['monit']['services'].empty?

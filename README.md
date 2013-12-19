@@ -60,7 +60,6 @@ Attributes
 
 ### monit::default
 
-
 Key                  | Description           | Default
 ---                  | -----------           | -------
 poll_interval        | check interval        | 15
@@ -79,6 +78,7 @@ notification_emails  | email addresses       | admin@example.com but not on { ac
 notification_from    | email from            | monit@$HOST
 notification_subject | email submit          | [$HOST: monit alert] $EVENT $SERVICE
 notification_message | email message         | $EVENT Service $SERVICE...
+services             | services attributes   | {}
 
 Resources / Providers
 ---------------------
