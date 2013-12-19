@@ -86,6 +86,51 @@ Resources / Providers
 - monit
 - monit_service
 
+### Monit Resource
+
+example:
+
+```ruby
+monit do
+  action :enable
+
+  poll_interval 15
+  poll_start_delay 60
+
+  logfile '/var/log/monit.log'
+  idfile '/var/lib/monit/id'
+  statefile '/var/lib/monit/state'
+
+  eventqueue_basedir '/var/lib/monit/events'
+  eventqueue_slots 5000
+end
+```
+
+### MonitService Resource
+
+example:
+
+```ruby
+monit_service :memcached do
+  action :create
+
+  check_type :process
+  check_with 'pidfile /var/run/memcached/memcached.pid'
+
+  start_program '/etc/init.d/memcached start'
+
+  start_with 'timeout 60 seconds'
+  stop_program '/etc/init.d/memcached stop'
+
+  conditions [
+    'if failed host 127.0.0.1 port 11211 then restart',
+    'if 2 restarts within 3 cycles then timeout',
+    'if cpu > 70% for 2 cycles then alert',
+    'if cpu > 98% for 5 cycles then restart'
+  ]
+end
+```
+
 License
 -------
 
