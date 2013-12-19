@@ -4,7 +4,7 @@ maintainer_email 'linyows@gmail.com'
 license          'MIT'
 description      'Installs/Configures monit'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.1.2'
+version          '0.1.3'
 
 recipe 'monit', 'Installs and configuires monit'
 recipe 'monit::disabled', 'disable monit'
