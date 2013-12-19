@@ -111,7 +111,7 @@ end
 example:
 
 ```ruby
-monit_service :memcached do
+monit_service 'memcached' do
   action :create
 
   check_type :process
