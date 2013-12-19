@@ -18,7 +18,7 @@ override_attributes(
   :monit => {
     :poll_interval => 30,
     :poll_start_delay => 100,
-    :notification_emails => 'linyows@gmail.com',
+    :notification_emails => 'admin@example.com but not on { action, instance }',
     :services => {
       :ssh => {
         :check_type => :process,
@@ -31,7 +31,7 @@ override_attributes(
           'if 5 restarts within 5 cycles then timeout'
         ]
       },
-      :memcache => {
+      :memcached => {
         :check_type => :process,
         :check_with => 'pidfile /var/run/memcached.pid',
         :start_program => '/etc/init.d/memcached start',
