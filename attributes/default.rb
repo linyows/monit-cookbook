@@ -1,11 +1,11 @@
 # Cookbook Name:: monit
 # Attributes:: default
 
-default['monit']['poll_interval']        = 120
-default['monit']['poll_start_delay']     = 300
+default['monit']['poll_interval']        = 15
+default['monit']['poll_start_delay']     = 60
 default['monit']['smtp_servers']         = 'localhost'
-default['monit']['eventqueue_slots']     = 100
-default['monit']['httpd']                = false
+default['monit']['eventqueue_slots']     = 5000
+default['monit']['httpd']                = true
 default['monit']['httpd_host']           = 'localhost'
 default['monit']['httpd_port']           = 2812
 default['monit']['httpd_allows']         = [

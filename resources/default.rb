@@ -17,10 +17,10 @@ attribute :service,
   :kind_of => String
 attribute :poll_interval,
   :kind_of => Integer,
-  :default => 120
+  :default => 15
 attribute :poll_start_delay,
   :kind_of => Integer,
-  :default => 300
+  :default => 60
 attribute :logfile,
   :kind_of => String,
   :required => true
@@ -38,10 +38,10 @@ attribute :eventqueue_basedir,
   :required => true
 attribute :eventqueue_slots,
   :kind_of => Integer,
-  :default => 100
+  :default => 5000
 attribute :httpd,
   :kind_of => [TrueClass, FalseClass],
-  :default => false
+  :default => true
 attribute :httpd_host,
   :kind_of => String,
   :default => 'localhost'
