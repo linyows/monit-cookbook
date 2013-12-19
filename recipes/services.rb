@@ -16,10 +16,10 @@ Array(node['monit']['services']).each do |name, attr|
 
     group         attr['group']
     conditions    attr['conditions']
-  end
+  end if attr
 end
 
 monit_service 'delete unmonitored service confs' do
   action :delete_unmonitored
   except node['monit']['services'].keys.map { |service| "#{service}.conf" }
-end
+end if node['monit']['services']

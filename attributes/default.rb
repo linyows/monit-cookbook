@@ -41,3 +41,5 @@ else
   default['monit']['statefile']            = '/var/lib/monit/state'
   default['monit']['eventqueue_basedir']   = '/var/lib/monit/events'
 end
+
+default['monit']['services']               = []
