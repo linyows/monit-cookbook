@@ -56,16 +56,16 @@ attribute :httpd_allows,
     'admin:monit',
     'user:pass read-only'
   ]
-attribute :notification_emails,
+attribute :alerts,
   :kind_of => [String, Array],
   :default => 'admin@example.com not on { action }'
-attribute :notification_from,
+attribute :alert_from,
   :kind_of => String,
   :default => 'monit@$HOST'
-attribute :notification_subject,
+attribute :alert_subject,
   :kind_of => String,
   :default => '[Monit Alert] $HOST: $EVENT $SERVICE'
-attribute :notification_message,
+attribute :alert_message,
   :kind_of => String,
   :default => <<-MSG.gsub(/^ {4}/, '').strip
     $EVENT Service $SERVICE

@@ -20,10 +20,10 @@ monit 'all' do
   httpd_port           node['monit']['httpd_port']
   httpd_allows         Array(node['monit']['httpd_allows'])
 
-  notification_emails  Array(node['monit']['notification_emails'])
-  notification_from    node['monit']['notification_from']
-  notification_subject node['monit']['notification_subject']
-  notification_message node['monit']['notification_message']
+  alerts               Array(node['monit']['alerts'])
+  alert_from           node['monit']['alert_from']
+  alert_subject        node['monit']['alert_subject']
+  alert_message        node['monit']['alert_message']
 end
 
 include_recipe 'monit::services'

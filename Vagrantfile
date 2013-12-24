@@ -18,7 +18,7 @@ Vagrant.configure('2') do |config|
         :monit => {
           :poll_interval => 10,
           :poll_start_delay => 0,
-          :notification_emails => 'linyows@gmail.com',
+          :alerts => 'linyows@gmail.com',
           :logfile => '/var/log/monit.log',
           :services => {
             :ssh => {
@@ -64,7 +64,7 @@ Vagrant.configure('2') do |config|
         :monit => {
           :poll_interval => 30,
           :poll_start_delay => 0,
-          :notification_emails => 'linyows@gmail.com',
+          :alerts => 'linyows@gmail.com',
           :services => {
             :ssh => {
               :check_type => :process,

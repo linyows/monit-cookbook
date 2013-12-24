@@ -71,10 +71,10 @@ action :enable do
         'httpd_host' => new_resource.httpd_host,
         'httpd_port' => new_resource.httpd_port,
         'httpd_allows' => new_resource.httpd_allows,
-        'notification_emails' => Array(new_resource.notification_emails),
-        'notification_from' => new_resource.notification_from,
-        'notification_subject' => new_resource.notification_subject,
-        'notification_message' => new_resource.notification_message,
+        'alerts' => Array(new_resource.alerts),
+        'alert_from' => new_resource.alert_from,
+        'alert_subject' => new_resource.alert_subject,
+        'alert_message' => new_resource.alert_message,
         'includes_dir_path' => includes_dir_path
       )
       notifies :restart, 'service[monit]'

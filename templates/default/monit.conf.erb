@@ -29,9 +29,9 @@ set eventqueue
   slots <%= @eventqueue_slots %>
 
 set mail-format {
-  from: <%= @notification_from %>
-  subject: <%= @notification_subject %>
-  message: <%= @notification_message %>
+  from: <%= @alert_from %>
+  subject: <%= @alert_subject %>
+  message: <%= @alert_message %>
 }
 
 <% if @httpd %>
