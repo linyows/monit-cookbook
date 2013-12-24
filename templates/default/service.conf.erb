@@ -6,6 +6,9 @@ check <%= @check_type.to_s %> <%= @name %>
 <% if @check_with %>
   with <%= @check_with %>
 <% end -%>
+<% Array(@alerts).each do |alert| %>
+  alert <%= alert %>
+<% end -%>
 <% if @start_program %>
 start program = "<%= @start_program %>"
 <% if @program_uid %>

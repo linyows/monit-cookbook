@@ -7,6 +7,7 @@ Array(node['monit']['services']).each do |name, attr|
 
     check_type    attr['check_type'].to_sym
     check_with    attr['check_with']
+    alerts        Array(attr['alerts'])
 
     start_program attr['start_program']
     start_with    attr['start_with']

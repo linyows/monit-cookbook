@@ -30,6 +30,7 @@ action :create do
         'name' => new_resource.name,
         'check_type' => new_resource.check_type,
         'check_with' => new_resource.check_with,
+        'alerts' => Array(new_resource.alerts),
         'start_program' => new_resource.start_program,
         'start_with' => new_resource.start_with,
         'stop_program' => new_resource.stop_program,

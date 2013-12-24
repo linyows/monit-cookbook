@@ -42,7 +42,7 @@ set httpd port <%= @httpd_port %> and
   <% end -%>
 
 <% end -%>
-<% Array(@notification_emails).each do |email| %>
+<% Array(@alerts).each do |email| %>
 set alert <%= email %>
 <% end -%>
 

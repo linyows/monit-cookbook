@@ -19,6 +19,8 @@ attribute :check_type,
 attribute :check_with,
   :kind_of => String,
   :required => true
+attribute :alerts,
+  :kind_of => [Array, String]
 attribute :group,
   :kind_of => String
 attribute :start_program,
